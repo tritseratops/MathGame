@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>MathGame</groupId>
+	<artifactId>MathGame</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<build>
+	    <outputDirectory>war/WEB-INF/classes</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<!-- <version>2.5.0</version> -->
+				<version>2.5.0-rc1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<runTarget>index.html</runTarget>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>gwt-maven-plugin</artifactId> 
+				<version>2.6.0-rc3</version> <executions> <execution> <configuration> <runTarget>index.html</runTarget> 
+				<module>main.java.org.oyanov.mathgame</module> </configuration> <goals> <goal>compile</goal> 
+				</goals> </execution> </executions> </plugin> -->
+			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>gwt-maven-plugin</artifactId> 
+				<version>2.5.0-rc1</version> <configuration> <modules> <module>${project.groupId}.${project.artifactId}.manager.Manager</module> 
+				</modules> <style>OBF</style> <draftCompile>${gwt.draftCompile}</draftCompile> 
+				<optimizationLevel>${gwt.optimizationLevel}</optimizationLevel> <extraParam>${gwt.draftCompile}</extraParam> 
+				<logLevel>INFO</logLevel> must be false otherwise the GWT compilation is 
+				placed inside the webapp folder <inplace>false</inplace> might be necessary 
+				for source maps or stack traces and shouldn't be overriden by this value 
+				in this case <deploy>${project.build.directory}/deploy</deploy> <runTarget>/${project.groupId}.${project.artifactId}.manager.Manager</runTarget> 
+				</configuration> </plugin> -->
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<!-- <version>2.5.0</version> -->
+			<version>2.5.0-rc1</version>
+
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<!-- <version>2.5.0</version> -->
+			<version>2.5.0-rc1</version>
+
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+</project>
